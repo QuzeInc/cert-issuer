@@ -19,7 +19,7 @@ RUN apk add --update \
         python3-dev \
         tar \
     && python3 -m ensurepip \
-    && pip3 install --upgrade setuptools \
+    && pip3 install --upgrade pip setuptools \
     && pip3 install awscli --upgrade \
     && mkdir ~/.bitcoin \
     && echo $'rpcuser=foo\nrpcpassword=bar\nrpcport=8332\nregtest=1\nrelaypriority=0\nrpcallowip=127.0.0.1\nrpcconnect=127.0.0.1\n' > /root/.bitcoin/bitcoin.conf \

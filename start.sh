@@ -1,11 +1,3 @@
-/bin/sh -c bitcoind daemon
-
-address=`bitcoin-cli getnewaddress`
-sed -i.bak "s/<issuing-address>/$address/g" /cert-issuer/conf.ini
-bitcoin-cli dumpprivkey $address > /cert-issuer/pk_issuer.txt
-bitcoin-cli generate 101
-bitcoin-cli getbalance
-bitcoin-cli sendtoaddress $address 5
 
 cd /cert-issuer
 
